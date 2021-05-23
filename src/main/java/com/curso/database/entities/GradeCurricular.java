@@ -27,4 +27,39 @@ public class GradeCurricular {
 			referencedColumnName = "id"
 			)
 	private Aluno aluno;
+	
+	public GradeCurricular() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public GradeCurricular(String objetivo, Aluno aluno) {
+		super();
+		this.objetivo = objetivo;
+		this.aluno = aluno;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getObjetivo() {
+		return objetivo;
+	}
+
+	public void setObjetivo(String objetivo) {
+		this.objetivo = objetivo;
+	}
+
+	public Aluno getAluno() {
+		return aluno;
+	}
+
+	public void setAluno(Aluno aluno) {
+		this.aluno = aluno;
+	}
+	
 }
