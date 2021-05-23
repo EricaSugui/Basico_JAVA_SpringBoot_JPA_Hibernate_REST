@@ -33,4 +33,39 @@ public class Materia {
 			}
 		)
 	private Set<GradeCurricular> grades = new HashSet<>();
+	
+	public Materia() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public Materia(String nome, Set<GradeCurricular> grades) {
+		super();
+		this.nome = nome;
+		this.grades = grades;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public Set<GradeCurricular> getGrades() {
+		return grades;
+	}
+
+	public void setGrades(Set<GradeCurricular> grades) {
+		this.grades = grades;
+	}
+	
 }
