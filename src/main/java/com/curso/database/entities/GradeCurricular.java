@@ -68,5 +68,13 @@ public class GradeCurricular {
 	public void setAluno(Aluno aluno) {
 		this.aluno = aluno;
 	}
+
+	public Set<Materia> getMaterias() {
+		return materias;
+	}
+
+	public void setMaterias(Set<Materia> materias) {
+		this.materias = materias;
+	}
 	
 }
