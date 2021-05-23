@@ -1,5 +1,8 @@
 package com.curso.database;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -8,9 +11,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import com.curso.database.entities.Aluno;
 import com.curso.database.entities.Curso;
 import com.curso.database.entities.GradeCurricular;
+import com.curso.database.entities.Materia;
 import com.curso.database.repositories.AlunoRepository;
 import com.curso.database.repositories.CursoRepository;
 import com.curso.database.repositories.GradeCurricularRepository;
+import com.curso.database.repositories.MateriaRepository;
 
 @SpringBootApplication
 public class TesteDatabaseApplication implements CommandLineRunner{
@@ -23,6 +28,9 @@ public class TesteDatabaseApplication implements CommandLineRunner{
 	
 	@Autowired
 	private GradeCurricularRepository gradeCurricularRepository;
+	
+	@Autowired
+	private MateriaRepository materiaRepository;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(TesteDatabaseApplication.class, args);
@@ -94,12 +102,19 @@ public class TesteDatabaseApplication implements CommandLineRunner{
 		alunoRepository.save(aluno2);
 		alunoRepository.save(aluno3);
 		
+		
 		GradeCurricular grade1 = new GradeCurricular("Graduação em Games", aluno1);
 		GradeCurricular grade2 = new GradeCurricular("Graduação em Academia de rua", aluno3);
 		
 		gradeCurricularRepository.save(grade1);
 		gradeCurricularRepository.save(grade2);
 		
+		Set<GradeCurricular> gradesMateria1 = new HashSet<>();
+		gradesMateria1.add(grade1);
+		Materia materia1 = new Materia("Design", gradesMateria1);
+		Materia materia2 = new Materia("cultura e Moda", gradesMateria1);
+		materiaRepository.save(materia1);
+		materiaRepository.save(materia2);
 	}
 
 	
